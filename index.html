@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rysowanie okna</title>
+    <style>
+    #wynik2{
+        float: left;
+        margin-left: 3.7px;
+    }
+    #wynik{
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <h1>Program Rysowanie okna</h1>
+    Bardzo proste zadanie polegające na narysowaniu okienka o zadanych wymiarach <br>
+
+    Podaj wielkość a: <input type="number" id="x"><br>
+    Podaj wielkość b: <input type="number" id="y"><br>
+    <button onclick="Rysuj(); return 0;">Rysuj</button>
+    <hr>
+    <p id="wynik"></p>
+    <p id="wynik2"></p>
+
+    <script>
+        function Rysuj(){
+            x = document.getElementById('x').value;
+            y = document.getElementById('y').value;
+            x = Number(x);
+            y = Number(y);
+
+            p = document.getElementById('wynik');
+            p2 = document.getElementById('wynik2');
+
+            z = "| <br>";
+            q = "| ";
+            p.innerHTML = q.repeat(x-2)+z.repeat(y-1)+q.repeat(x-1);
+            p2.innerHTML = z.repeat(y);
+        }
+    </script>
+
+</body>
+</html>
